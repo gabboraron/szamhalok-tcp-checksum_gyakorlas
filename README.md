@@ -44,6 +44,7 @@ print(data.decode('UTF-8'))
 Ha a kiírndó szöveget nem dekódoljuk akkor a küldéshez szükséges nyers formában kapjuk meg.
 
 ## Parancssori argumentum átvétele:
+fájl: `command_line_arg.py`
 ````Python
 import sys
 
@@ -54,3 +55,8 @@ Ha az első megadott elemet akarjuk lekérni akkor:
 print (sys.argv[1])
 ````
 A `0` érték a program nevét adja vissza, ugyanis az _"a 0. elem"_.
+
+## Parancssori argumentumként elstartoltatni a servert, klienst
+A kliens és a szerver egy-egy parancssori argumentumban kapja meg az IP-t és a portot amin elstartotl, pl: `kliens.py ip port`. Ekkor ha a korábbi tcpt használjuk figyleni kell, hogy a `server_address = (server_ip, server_port)`-nek a második argumentuma _szám_ kell legyen, azaz, így vegyük át például: `server_port = int(sys.argv[2])`
+
+fájlok: `start_on_parameter/start_server_oncommand_line_arg.py` és `start_on_parameter/command_line_test_client.py`
