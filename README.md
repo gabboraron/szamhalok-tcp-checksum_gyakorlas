@@ -1,6 +1,7 @@
 # TCP
 ## Alap tcp kommunikáció
 fájl: `tcpclient1.py` és `tcpserver1.py`
+
 __Server:__
 szerver elstartoltatása:
 ````Python
@@ -41,3 +42,15 @@ data = connection.recv(1024)
 print(data.decode('UTF-8'))
 ````
 Ha a kiírndó szöveget nem dekódoljuk akkor a küldéshez szükséges nyers formában kapjuk meg.
+
+## Parancssori argumentum átvétele:
+````Python
+import sys
+
+print (sys.argv)
+````
+Ha az első megadott elemet akarjuk lekérni akkor: 
+````Python
+print (sys.argv[1])
+````
+A `0` érték a program nevét adja vissza, ugyanis az _"a 0. elem"_.
